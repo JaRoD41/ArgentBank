@@ -1,4 +1,4 @@
-function user() {
+function User() {
 	return (
 		<div className="user">
 			<h1>Argent Bank</h1>
@@ -8,3 +8,5 @@ function user() {
 		</div>
 	)
 }
+
+export default User

@@ -1,4 +1,4 @@
-function signIn () {
+function SignIn () {
     return (
         <div className="sign-in">
         <h1>Argent Bank</h1>
@@ -18,3 +18,5 @@ function signIn () {
         </div>
     );
     }
+
+    export default SignIn
