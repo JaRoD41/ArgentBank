@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import './style/main.css'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import User from './pages/User'
@@ -7,7 +8,7 @@ import Error from './pages/Error'
 
 export default function App() {
 	return (
-		<div className="App">
+		<body>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<SignIn />} />
@@ -15,6 +16,6 @@ export default function App() {
                 <Route path="*" element={<Error />} />
 			</Routes>
             <Footer />
-		</div>
+		</body>
 	)
 }
