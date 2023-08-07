@@ -9,7 +9,6 @@ function SignIn() {
 			<main className="main bg-dark">
 				<SignInForm />
 			</main>
-			<Footer />
 		</>
 	)
 }

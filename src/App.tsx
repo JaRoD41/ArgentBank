@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import User from './pages/User'
 import SignIn from './pages/Sign-in'
@@ -9,10 +10,11 @@ export default function App() {
 		<div className="App">
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/signIn" element={<SignIn />} />
-				<Route path="/user/:user" element={<User />} />
+				<Route path="/login" element={<SignIn />} />
+				<Route path="/profile/:user" element={<User />} />
                 <Route path="*" element={<Error />} />
 			</Routes>
+            <Footer />
 		</div>
 	)
 }

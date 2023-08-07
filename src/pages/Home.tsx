@@ -9,7 +9,6 @@ function Home() {
 			<main>
 				<MainHome />
 			</main>
-			<Footer />
 		</>
 	)
 }

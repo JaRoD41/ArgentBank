@@ -6,10 +6,17 @@ function User() {
 	return (
 		<>
 			<HeaderLoggedIn name={userOne.lastName} />
-			<div className="user">
-				<h1>Argent Bank</h1>
-				<h2>User Page</h2>
-			</div>
+			<main className="main bg-dark">
+				<div className="header">
+					<h1>
+						Welcome back
+						<br />
+						{userOne.firstName} {userOne.lastName}
+					</h1>
+					<button className="edit-button">Edit Name</button>
+				</div>
+				
+			</main>
 		</>
 	)
 }
