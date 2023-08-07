@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom'
+
 export default function HeaderSignOutButton() {
 	return (
 		<>
-			<a className="main-nav-item" href="./index.html">
+			<Link className="main-nav-item" to={`/signIn`}>
 				<i className="fa fa-sign-out"></i>
 				Sign Out
-			</a>
+			</Link>
 		</>
 	)
 }
