@@ -1,8 +1,6 @@
-import SignInButton from './SignInButton'
-
-export default function SignInForm() {
+export default function MainSignIn() {
 	return (
-		<>
+		<main className="main bg-dark">
 			<section className="sign-in-content">
 				<i className="fa fa-user-circle sign-in-icon"></i>
 				<h1>Sign In</h1>
@@ -19,9 +17,9 @@ export default function SignInForm() {
 						<input type="checkbox" id="remember-me" />
 						<label htmlFor="remember-me">Remember me</label>
 					</div>
-					<SignInButton />
+					<button className="sign-in-button">Sign In</button>
 				</form>
 			</section>
-		</>
+		</main>
 	)
 }

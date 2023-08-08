@@ -8,14 +8,14 @@ import Error from './pages/Error'
 
 export default function App() {
 	return (
-		<body>
+		<>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/login" element={<SignIn />} />
 				<Route path="/profile/:user" element={<User />} />
-                <Route path="*" element={<Error />} />
+				<Route path="*" element={<Error />} />
 			</Routes>
-            <Footer />
-		</body>
+			<Footer />
+		</>
 	)
 }
