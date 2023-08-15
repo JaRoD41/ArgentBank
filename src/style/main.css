@@ -13,7 +13,8 @@ body {
   min-height: 100vh;
 }
 
-.main {
+main.main {
+  display: flex;
   flex: 1;
 }
 
