@@ -1,3 +1,3 @@
-export const emailTest = 'tony@stark.com'
-export const passwordTest = 'password123'
+export const verifiedEmail = 'tony@stark.com'
+export const verifiedPassword = 'password123'
 

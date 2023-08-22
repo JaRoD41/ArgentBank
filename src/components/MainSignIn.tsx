@@ -1,17 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { setUsername, setPassword } from '../features/auth'
+import { setUsername, setPassword, getLoggedIn } from '../features/auth'
 import { loginMiddleware } from '../middlewares/loginMiddleware'
-import { emailTest, passwordTest } from '../mock/mockedUsers'
 
 export default function MainSignIn() {
 	const dispatch = useDispatch()
-
-	const handleUsername = (e: any) => {
-		// dispatch(setUsername(e.target.value))
-		console.log('username :', e.target.value)
-	}
-	const username = document.getElementById('username')
-	const password = document.getElementById('password')
 
 	return (
 		<main className="main bg-dark">
@@ -37,6 +29,7 @@ export default function MainSignIn() {
 							event.preventDefault()
 							const username = (document.getElementById('username') as HTMLInputElement).value
 							const password = (document.getElementById('password') as HTMLInputElement).value
+
 							loginMiddleware(dispatch, username, password)()
 						}}
 					>
