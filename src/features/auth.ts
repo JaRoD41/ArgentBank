@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { verifiedEmail, verifiedPassword } from '../mock/mockedUsers'
-// import { loginMiddleware } from '../middlewares/loginMiddleware'
 
 const initialState = {
 	firstName: '',
@@ -39,9 +38,18 @@ export const auth = createSlice({
 		},
     getLoggedIn: (state, action) => {
       state.isLoggedIn = action.payload
+    },
+    rememberChecked: (state, action) => {
+      state.rememberMe = action.payload
+    },
+    setAuthenticating: (state, action) => {
+      // ajouter verif token date, etc.... créer un middleware
+      state.isLoggedIn = true
+      state.token = action.payload.token
+      state.email = action.payload.email
     }
 	},
 })
 
-export const { setUsername, setPassword, getLoggedIn } = auth.actions
+export const { setUsername, setPassword, getLoggedIn, rememberChecked, setAuthenticating } = auth.actions
 export default auth.reducer
