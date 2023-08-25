@@ -11,7 +11,7 @@ export default function HeaderSignOutButton() {
 
 	return (
 		<>
-			<Link className="main-nav-item" to={`/login`} onClick={signOut}>
+			<Link className="main-nav-item" to={`/`} onClick={signOut}>
 				<i className="fa fa-sign-out"></i>
 				Sign Out
 			</Link>
