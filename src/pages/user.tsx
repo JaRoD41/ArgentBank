@@ -1,4 +1,5 @@
 import HeaderLoggedIn from '../components/HeaderLoggedIn'
+import UserPageHeader from '../components/UserPageHeader'
 import { useSelector } from 'react-redux'
 
 function User() {
@@ -7,7 +8,7 @@ function User() {
 	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
 	return (
 		<>
-			<HeaderLoggedIn name={userOne.lastName} />
+			<HeaderLoggedIn name={userOne.firstName} />
 			<main className="main bg-dark">
 				<div className="header">
 					<h1>
