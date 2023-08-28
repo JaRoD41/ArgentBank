@@ -1,6 +1,5 @@
 import logo from '../assets/argentBankLogo.png'
-import HeaderSignOutButton from './HeaderSignOutButton'
-import HeaderUserButton from './HeaderUserButton'
+// import HeaderUserButton from './HeaderUserButton'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -16,8 +15,8 @@ export default function HeaderLoggedIn() {
 					<h1 className="sr-only">Argent Bank</h1>
 				</Link>
 				<div>
-					<HeaderUserButton name={user.firstName} />
-					<HeaderSignOutButton />
+					{/* <HeaderUserButton name={user.firstName} /> */}
+					{/* <HeaderSignOutButton /> */}
 				</div>
 			</nav>
 		</>

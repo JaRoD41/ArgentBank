@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Header from '../components/Header'
-import { handleClick, handleCheckBox } from '../utils/sharedFunctions'
+// import { handleClick } from '../utils/sharedFunctions'
+import { ChangeEvent } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginMiddleware } from '../middlewares/loginMiddleware'
 import { useNavigate } from 'react-router-dom'
@@ -12,25 +13,21 @@ function SignIn() {
 	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
 
+	const handleCheckBox = (event: ChangeEvent<HTMLInputElement>) => {
+		if ((document.getElementById('remember-me') as HTMLInputElement).checked) {
+			console.log('checkbox checked')
+			dispatch(rememberChecked(event.target.checked))
+			console.log('rememberMe ? :', rememberMe)
+		} else {
+			console.log('checkbox not checked')
+			dispatch(rememberChecked(!event.target.checked))
+			console.log('rememberMe ? :', rememberMe)
+		}
+	}
+
 	return (
 		<>
-			{/* <nav className="main-nav">
-				<Link className="main-nav-logo" to={`/`}>
-					<img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
-					<h1 className="sr-only">Argent Bank</h1>
-				</Link>
-				<div>
-					<Link
-						className="main-nav-item"
-						to={`/login`}
-						onClick={(event) => handleClick(event, isLoggedIn, rememberMe, navigate)}
-					>
-						<i className="fa fa-user-circle"></i>
-						Sign In
-					</Link>
-				</div>
-			</nav> */}
-			<Header />
+			<Header actualUser={{ lastName: '', firstName: '' }} />
 			<main className="main bg-dark">
 				<section className="sign-in-content">
 					<i className="fa fa-user-circle sign-in-icon"></i>
@@ -45,7 +42,7 @@ function SignIn() {
 							<input type="password" id="password" />
 						</div>
 						<div className="input-remember">
-							<input type="checkbox" id="remember-me" onChange={(event) => handleCheckBox(event, rememberChecked)} />
+							<input type="checkbox" id="remember-me" onChange={handleCheckBox} />
 							<label htmlFor="remember-me">Remember me</label>
 						</div>
 						<button

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { getLoggedIn, rememberChecked } from '../features/auth'
+import { rememberChecked } from '../features/auth'
 
 export default function HeaderSignOutButton() {
 	const dispatch = useDispatch()
 	const signOut = () => {
-		dispatch(getLoggedIn(false))
+		// dispatch(isLoggedIn(false))
 		dispatch(rememberChecked(false))
 	}
 

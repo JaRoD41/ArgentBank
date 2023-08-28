@@ -2,50 +2,20 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
+import Header from '../components/Header'
 import iconChat from '../assets/icon-chat.png'
 import iconMoney from '../assets/icon-money.png'
 import iconSecurity from '../assets/icon-security.png'
 import { handleClick } from '../utils/sharedFunctions'
 
-// function Home() {
-// 	return (
-// 		<>
-// 			<Header />
-// 			<main>
-// 				<MainHome />
-// 			</main>
-// 		</>
-// 	)
-// }
 function Home() {
 	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
 	const navigate = useNavigate()
 
-	// const handleClick = (event: any) => {
-	// 	if (isLoggedIn && rememberMe) {
-	// 		event.preventDefault()
-	// 		navigate('/profile/')
-	// 	}
-	// }
 	return (
 		<>
-			<nav className="main-nav">
-				<Link className="main-nav-logo" to={`/`}>
-					<img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
-					<h1 className="sr-only">Argent Bank</h1>
-				</Link>
-				<div>
-					<Link
-						className="main-nav-item"
-						to={`/login`}
-						onClick={(event) => handleClick(event, isLoggedIn, rememberMe, navigate)}
-					>
-						<i className="fa fa-user-circle"></i>
-						Sign In
-					</Link>
-				</div>
-			</nav>
+			<Header actualUser={{ lastName: '', firstName: '' }} />
 			<main>
 				<div className="hero">
 					<section className="hero-content">
