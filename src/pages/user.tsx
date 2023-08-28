@@ -3,12 +3,12 @@ import UserPageHeader from '../components/UserPageHeader'
 import { useSelector } from 'react-redux'
 
 function User() {
-	const userOne = { lastName: 'Stark', firstName: 'Tony' }
-	const userTwo = { lastName: 'Rogers', firstName: 'Steve' }
-	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
+	// const user = { lastName: 'Stark', firstName: 'Tony' }
+	// const userTwo = { lastName: 'Rogers', firstName: 'Steve' }
+	// const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
 	return (
 		<>
-			<HeaderLoggedIn name={userOne.firstName} />
+			<HeaderLoggedIn />
 			<main className="main bg-dark">
 				<div className="header">
 					<h1>
@@ -50,6 +50,9 @@ function User() {
 					</div>
 				</section>
 			</main>
+			<footer className="footer">
+				<p className="footer-text">Copyright 2020 Argent Bank</p>
+			</footer>
 		</>
 	)
 }

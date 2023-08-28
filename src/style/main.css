@@ -8,15 +8,23 @@ html {
 
 body {
 	margin: 0;
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	min-height: 100vh; */
 }
 
-main {
+#root {
+	min-height: 100vh;
+	margin: 0;
 	display: flex;
-	flex: 1;
 	flex-direction: column;
+}
+
+.main {
+	/* display: flex; */
+	flex: 1;
+	padding-top: 3rem;
+	/* flex-direction: column; */
 }
 
 .bg-dark {

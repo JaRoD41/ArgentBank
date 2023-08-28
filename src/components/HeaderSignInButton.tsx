@@ -7,7 +7,7 @@ export default function HeaderSignInButton() {
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
 	const navigate = useNavigate()
 
-	const handleClick = (event: any) => {
+	const handleLogIn = (event: any) => {
 		if (isLoggedIn && rememberMe) {
 			event.preventDefault()
 			navigate('/profile/')
@@ -15,7 +15,7 @@ export default function HeaderSignInButton() {
 	}
 	return (
 		<div>
-			<Link className="main-nav-item" to={`/login`} onClick={handleClick}>
+			<Link className="main-nav-item" to={`/login`} onClick={handleLogIn}>
 				<i className="fa fa-user-circle"></i>
 				Sign In
 			</Link>
