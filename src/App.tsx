@@ -15,7 +15,7 @@ export default function App() {
 				<Route path="/profile/" element={<User />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	)
 }
