@@ -46,7 +46,12 @@ export const auth = createSlice({
 		// 	state.isLoggedIn = action.payload
 		// },
 		rememberChecked: (state, action) => {
-			state.rememberMe = action.payload
+			if (action.payload === true) {
+				state.rememberMe = true
+			} else {
+				state.rememberMe = false
+			}
+			// state.rememberMe = action.payload
 		},
 		setAuthenticating: (state, action) => {
 			// ajouter verif token date, etc.... créer un middleware

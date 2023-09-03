@@ -1,14 +1,26 @@
 import Header from '../components/Header'
 import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function User() {
 	const userFirstName = useSelector((state: any) => state.auth.firstName)
 	const userLastName = useSelector((state: any) => state.auth.lastName)
 	const user = { lastName: userLastName, firstName: userFirstName }
-	console.log('utilisateur actuel : ', user)
+	console.log('utilisateur actuel : ', userLastName)
+
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		if (!userLastName) {
+			navigate('/login')
+		}
+	}, [])
+	
 
 	return (
-		user && (
+		// Si le client n'est pas connecté, je n'affiche pas la page
+		userLastName && (
 			<>
 				<Header actualUser={user} />
 				<main className="main bg-dark">

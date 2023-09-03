@@ -12,6 +12,9 @@ function SignIn() {
 	const navigate = useNavigate()
 	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
+	const userFirstName = useSelector((state: any) => state.auth.firstName)
+	const userLastName = useSelector((state: any) => state.auth.lastName)
+	const user = { lastName: userLastName, firstName: userFirstName }
 
 	const handleCheckBox = (event: ChangeEvent<HTMLInputElement>) => {
 		if ((document.getElementById('remember-me') as HTMLInputElement).checked) {
@@ -27,7 +30,7 @@ function SignIn() {
 
 	return (
 		<>
-			<Header actualUser={{ lastName: '', firstName: '' }} />
+			<Header actualUser={{ lastName: userLastName, firstName: userFirstName }} />
 			<main className="main bg-dark">
 				<section className="sign-in-content">
 					<i className="fa fa-user-circle sign-in-icon"></i>

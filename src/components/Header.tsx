@@ -19,7 +19,6 @@ export default function Header({ actualUser }: HeaderProps) {
 	const handleSignout = () => {
 		// localStorage.removeItem('token')
 		// localStorage.removeItem('rememberMe')
-		dispatch(isLoggedIn(false))
 		dispatch(rememberChecked(false))
 		dispatch(setUserInfos({}))
 	}
@@ -33,7 +32,7 @@ export default function Header({ actualUser }: HeaderProps) {
 	return (
 		<>
 			<nav className="main-nav">
-				{/* Si le client est connecté et mémorisé, le lien de retour à l'accueil est inactif */}
+				{/* Si le client est connecté, le lien de retour à l'accueil est inactif */}
 				{isLoggedIn ? (
 					<Link className="main-nav-logo" to={`/profile`}>
 						<img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
@@ -49,7 +48,7 @@ export default function Header({ actualUser }: HeaderProps) {
 				{/* Si le client est connecté, j'affiche le bouton de déconnexion */}
 				{isLoggedIn ? (
 					<div>
-						<Link className="main-nav-item" to={`/profile/${actualUser.firstName}`}>
+						<Link className="main-nav-item" to={`/profile/`}>
 							<i className="fa fa-user-circle"></i>
 							{actualUser.firstName}
 						</Link>
