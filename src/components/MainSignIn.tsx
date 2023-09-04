@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { loginMiddleware } from '../middlewares/loginMiddleware'
 import { useNavigate } from 'react-router-dom'
-import { rememberChecked } from '../features/auth'
+import { checkBox } from '../features/auth'
 
 export default function MainSignIn() {
 	const dispatch = useDispatch()
@@ -11,10 +11,10 @@ export default function MainSignIn() {
 	const handleCheckBox = () => {
 		if ((document.getElementById('remember-me') as HTMLInputElement).checked) {
 			console.log('checkbox checked')
-			dispatch(rememberChecked(true))
+			dispatch(checkBox(true))
 		} else {
 			console.log('checkbox not checked')
-			dispatch(rememberChecked(false))
+			dispatch(checkBox(false))
 		}
 	}
 

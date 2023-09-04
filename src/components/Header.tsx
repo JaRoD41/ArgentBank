@@ -1,7 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { rememberChecked, setUserInfos } from '../features/auth'
+import { checkBox, setUserInfos } from '../features/auth'
+import { setAuthenticating } from '../features/auth'
+import { logoutMiddleware } from '../middlewares/loginMiddleware'
 
 interface HeaderProps {
 	actualUser: {
@@ -17,15 +19,12 @@ export default function Header({ actualUser }: HeaderProps) {
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
 
 	const handleSignout = () => {
-		// localStorage.removeItem('token')
-		// localStorage.removeItem('rememberMe')
-		dispatch(rememberChecked(false))
-		dispatch(setUserInfos({}))
+		logoutMiddleware(dispatch)
+		navigate('/login/')
 	}
 
 	const handleLogIn = (event: any) => {
 		event.preventDefault()
-		// navigate('/profile/')
 		navigate('/login/')
 	}
 
@@ -33,7 +32,7 @@ export default function Header({ actualUser }: HeaderProps) {
 		<>
 			<nav className="main-nav">
 				{/* Si le client est connecté, le lien de retour à l'accueil est inactif */}
-				{isLoggedIn ? (
+				{isLoggedIn && rememberMe ? (
 					<Link className="main-nav-logo" to={`/profile`}>
 						<img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
 						<h1 className="sr-only">Argent Bank</h1>

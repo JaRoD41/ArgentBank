@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { rememberChecked } from '../features/auth'
+import { checkBox } from '../features/auth'
 
 export const handleClick = (event: any, isLoggedIn: boolean, rememberMe: boolean, navigate: Function) => {
 	if (isLoggedIn && rememberMe) {
@@ -12,9 +12,9 @@ export const handleClick = (event: any, isLoggedIn: boolean, rememberMe: boolean
 export const handleCheckBox = (event:any, dispatch: Function) => {
 	if ((document.getElementById('remember-me') as HTMLInputElement).checked) {
 		console.log('checkbox checked')
-		dispatch(rememberChecked(true))
+		dispatch(checkBox(true))
 	} else {
 		console.log('checkbox not checked')
-		dispatch(rememberChecked(false))
+		dispatch(checkBox(false))
 	}
 }

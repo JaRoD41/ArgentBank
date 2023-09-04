@@ -1,11 +1,9 @@
-// import { Link } from 'react-router-dom'
 import Header from '../components/Header'
-// import { handleClick } from '../utils/sharedFunctions'
 import { ChangeEvent } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginMiddleware } from '../middlewares/loginMiddleware'
 import { useNavigate } from 'react-router-dom'
-import { rememberChecked } from '../features/auth'
+import { checkBox } from '../features/auth'
 
 function SignIn() {
 	const dispatch = useDispatch()
@@ -17,16 +15,9 @@ function SignIn() {
 	const user = { lastName: userLastName, firstName: userFirstName }
 
 	const handleCheckBox = (event: ChangeEvent<HTMLInputElement>) => {
-		if ((document.getElementById('remember-me') as HTMLInputElement).checked) {
-			console.log('checkbox checked')
-			dispatch(rememberChecked(event.target.checked))
-			console.log('rememberMe ? :', rememberMe)
-		} else {
-			console.log('checkbox not checked')
-			dispatch(rememberChecked(!event.target.checked))
-			console.log('rememberMe ? :', rememberMe)
-		}
+		dispatch(checkBox(event.target.checked))
 	}
+	console.log('rememberMe ? :', rememberMe)
 
 	return (
 		<>
@@ -72,7 +63,7 @@ function SignIn() {
 				</section>
 			</main>
 			<footer className="footer">
-				<p className="footer-text">Copyright 2020 Argent Bank</p>
+				<p className="footer-text">Copyright 2023 Argent Bank</p>
 			</footer>
 		</>
 	)

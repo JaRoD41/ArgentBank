@@ -2,12 +2,10 @@ import axios from 'axios'
 import { loginURL, profileURL } from '../utils/urls'
 import { Dispatch } from '@reduxjs/toolkit'
 import { setAuthenticating, setUserInfos } from '../features/auth'
-// import { useDispatch, useSelector } from 'react-redux'
+import { checkBox } from '../features/auth'
 
 export const loginMiddleware = (
 	dispatch: Dispatch,
-	// firstName: string,
-	// lastName: string,
 	email: string,
 	password: string,
 	isLoggedIn: boolean,
@@ -32,9 +30,7 @@ export const loginMiddleware = (
 
 			// Si la réponse de l'API contient un token, je mets à jour le state
 			if (loginResponse.data.status === 200) {
-				dispatch(setAuthenticating({ token: loginResponse.data.body.token, email: email }))
-				// dispatch(setUserInfos({ firstName: response.data.body.firstName, lastName: response.data.body.lastName }))
-				onSucceed()
+				dispatch(setAuthenticating({ token: loginResponse.data.body.token, isLoggedIn: true }))
 			}
 			console.log('token actuel :', loginResponse.data.body.token)
 			console.log('utilisateur actuel :', email)
@@ -45,10 +41,21 @@ export const loginMiddleware = (
 				{ headers: { Authorization: `Bearer ${loginResponse.data.body.token}` } }
 			)
 			dispatch(
-				setUserInfos({ firstName: profileResponse.data.body.firstName, lastName: profileResponse.data.body.lastName, email: profileResponse.data.body.email })
+				setUserInfos({
+					firstName: profileResponse.data.body.firstName,
+					lastName: profileResponse.data.body.lastName,
+					email: profileResponse.data.body.email,
+				})
 			)
+			onSucceed()
 		} catch (error) {
 			console.log('erreur API :', error)
 		}
 	}
+}
+
+export const logoutMiddleware = (dispatch: Dispatch) => {
+	dispatch(checkBox(false))
+	dispatch(setUserInfos({}))
+	dispatch(setAuthenticating({ isLoggedIn: false }))
 }
