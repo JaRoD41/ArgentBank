@@ -1,4 +1,6 @@
 import Header from '../components/Header'
+import HeaderLoggedInBase from '../components/HeaderLoggedInBase'
+import HeaderLoggedInEdited from '../components/HeaderLoggedInEdited'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -6,32 +8,31 @@ import { useNavigate } from 'react-router-dom'
 function User() {
 	const userFirstName = useSelector((state: any) => state.auth.firstName)
 	const userLastName = useSelector((state: any) => state.auth.lastName)
-	const user = { lastName: userLastName, firstName: userFirstName }
-	console.log('utilisateur actuel : ', userLastName)
+	const editionMode = useSelector((state: any) => state.auth.editionMode)
+	// const user = { lastName: userLastName, firstName: userFirstName }
+	console.log('Mode edition activé : ', editionMode)
 
 	const navigate = useNavigate()
 
+	// Si le client n'est pas connecté, je n'affiche pas la page
 	useEffect(() => {
 		if (!userLastName) {
 			navigate('/login')
 		}
 	}, [])
-	
 
 	return (
-		// Si le client n'est pas connecté, je n'affiche pas la page
 		userLastName && (
 			<>
-				<Header actualUser={user} />
+				<Header actualUser={{ lastName: userLastName, firstName: userFirstName }} />
 				<main className="main bg-dark">
-					<div className="header">
-						<h1>
-							Welcome back
-							<br />
-							{user.firstName} {user.lastName} !
-						</h1>
-						<button className="edit-button">Edit Name</button>
-					</div>
+					{/* Si le bouton Edit est cliqué, j'affiche le composant HeaderLoggedInEdited, sinon le HeaderLoggedInBase */}
+					{editionMode ? (
+						<HeaderLoggedInEdited actualUser={{ lastName: userLastName, firstName: userFirstName }} />
+					) : (
+						<HeaderLoggedInBase actualUser={{ lastName: userLastName, firstName: userFirstName }} />
+					)}
+
 					<h2 className="sr-only">Accounts</h2>
 					<section className="account">
 						<div className="account-content-wrapper">

@@ -54,8 +54,8 @@ export const loginMiddleware = (
 	}
 }
 
-export const logoutMiddleware = (dispatch: Dispatch) => {
-	// dispatch(checkBox({ rememberMe: false }))
-	dispatch(setUserInfos({ rememberMe: false }))
-	dispatch(setAuthenticating({ isLoggedIn: false }))
-}
+// export const logoutMiddleware = (dispatch: Dispatch) => {
+// 	// dispatch(checkBox({ rememberMe: false }))
+// 	dispatch(setUserInfos({ rememberMe: false }))
+// 	dispatch(setAuthenticating({ isLoggedIn: false }))
+// }

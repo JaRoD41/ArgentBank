@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { act } from 'react-dom/test-utils'
 
 const initialState = {
 	firstName: '',
@@ -8,6 +9,7 @@ const initialState = {
 	token: '',
 	rememberMe: false,
 	isLoggedIn: false,
+	editionMode: false,
 	error: null,
 }
 
@@ -39,10 +41,16 @@ export const auth = createSlice({
 			state.token = ''
 			state.rememberMe = false
 			state.isLoggedIn = false
+			state.editionMode = false
 			state.error = null
+		},
+
+		// Je crée un reducer pour basculer le composant HeaderLoggedInBase sur le composant HeaderLoggedInEdited si l'utilisateur souhaite modifier son nom et prénom
+		editUser: (state, action) => {
+			state.editionMode = action.payload.editionMode
 		},
 	},
 })
 
-export const { setUserInfos, setAuthenticating, resetState } = auth.actions
+export const { setUserInfos, setAuthenticating, resetState, editUser } = auth.actions
 export default auth.reducer
