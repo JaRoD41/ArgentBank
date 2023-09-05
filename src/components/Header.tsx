@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { resetState } from '../features/auth'
-import { logoutMiddleware } from '../middlewares/loginMiddleware'
+// import { logoutMiddleware } from '../middlewares/loginMiddleware'
 
 interface HeaderProps {
 	actualUser: {
@@ -15,12 +15,12 @@ export default function Header({ actualUser }: HeaderProps) {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
-	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
+	// const rememberMe = useSelector((state: any) => state.auth.rememberMe)
 
-	const handleSignout = () => {
-		logoutMiddleware(dispatch)
-		navigate('/login/')
-	}
+	// const handleSignout = () => {
+	// 	logoutMiddleware(dispatch)
+	// 	navigate('/login/')
+	// }
 
 	const handleLogIn = (event: any) => {
 		event.preventDefault()
