@@ -22,8 +22,8 @@ export default function HeaderLoggedInEdited({ actualUser }: HeaderLoggedInEdite
 		const newFirstName = (document.getElementById('firstname') as HTMLInputElement).value
 		const newLastName = (document.getElementById('lastname') as HTMLInputElement).value
 
+		// Je renvoie les nouvelles informations de l'utilisateur vers mon middleware editUser
 		editUserMiddleware(dispatch, newFirstName, newLastName)
-		console.log('Save button clicked')
 	}
 
 	const handleCancelButton = (event: any) => {
