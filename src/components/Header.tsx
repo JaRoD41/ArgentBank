@@ -1,8 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { checkBox, setUserInfos } from '../features/auth'
-import { setAuthenticating } from '../features/auth'
+import { resetState } from '../features/auth'
 import { logoutMiddleware } from '../middlewares/loginMiddleware'
 
 interface HeaderProps {
@@ -32,7 +31,7 @@ export default function Header({ actualUser }: HeaderProps) {
 		<>
 			<nav className="main-nav">
 				{/* Si le client est connecté, le lien de retour à l'accueil est inactif */}
-				{isLoggedIn && rememberMe ? (
+				{isLoggedIn ? (
 					<Link className="main-nav-logo" to={`/profile`}>
 						<img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
 						<h1 className="sr-only">Argent Bank</h1>
@@ -51,7 +50,7 @@ export default function Header({ actualUser }: HeaderProps) {
 							<i className="fa fa-user-circle"></i>
 							{actualUser.firstName}
 						</Link>
-						<Link className="main-nav-item" to={`/`} onClick={handleSignout}>
+						<Link className="main-nav-item" to={`/`} onClick={() => dispatch(resetState())}>
 							<i className="fa fa-sign-out"></i>
 							Sign Out
 						</Link>

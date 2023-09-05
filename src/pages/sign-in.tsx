@@ -3,7 +3,8 @@ import { ChangeEvent } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginMiddleware } from '../middlewares/loginMiddleware'
 import { useNavigate } from 'react-router-dom'
-import { checkBox } from '../features/auth'
+import { setUserInfos } from '../features/auth'
+// import { checkBox } from '../features/auth'
 
 function SignIn() {
 	const dispatch = useDispatch()
@@ -12,10 +13,17 @@ function SignIn() {
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
 	const userFirstName = useSelector((state: any) => state.auth.firstName)
 	const userLastName = useSelector((state: any) => state.auth.lastName)
-	const user = { lastName: userLastName, firstName: userFirstName }
+	// const user = { lastName: userLastName, firstName: userFirstName }
 
 	const handleCheckBox = (event: ChangeEvent<HTMLInputElement>) => {
-		dispatch(checkBox(event.target.checked))
+		//
+		if ((event.target as HTMLInputElement).checked) {
+			console.log('checkbox checked')
+			dispatch(setUserInfos({ rememberMe: true }))
+		} else {
+			console.log('checkbox not checked')
+			dispatch(setUserInfos({ rememberMe: false }))
+		}
 	}
 	console.log('rememberMe ? :', rememberMe)
 

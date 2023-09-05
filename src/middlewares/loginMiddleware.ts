@@ -2,7 +2,7 @@ import axios from 'axios'
 import { loginURL, profileURL } from '../utils/urls'
 import { Dispatch } from '@reduxjs/toolkit'
 import { setAuthenticating, setUserInfos } from '../features/auth'
-import { checkBox } from '../features/auth'
+// import { checkBox } from '../features/auth'
 
 export const loginMiddleware = (
 	dispatch: Dispatch,
@@ -55,7 +55,7 @@ export const loginMiddleware = (
 }
 
 export const logoutMiddleware = (dispatch: Dispatch) => {
-	dispatch(checkBox(false))
-	dispatch(setUserInfos({}))
+	// dispatch(checkBox({ rememberMe: false }))
+	dispatch(setUserInfos({ rememberMe: false }))
 	dispatch(setAuthenticating({ isLoggedIn: false }))
 }
