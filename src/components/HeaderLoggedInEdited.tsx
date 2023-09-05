@@ -34,22 +34,26 @@ export default function HeaderLoggedInEdited({ actualUser }: HeaderLoggedInEdite
 		<>
 			<div className="header">
 				<h1>Welcome back</h1>
-				<form>
-					<div className="input-wrapper">
-						<label htmlFor="firstname"></label>
-						<input type="text" id="firstname" placeholder={actualUser.firstName} />
-					</div>
-					<div className="input-wrapper">
-						<label htmlFor="lastname"></label>
-						<input type="text" id="lastname" placeholder={actualUser.lastName} />
-					</div>
+				<form className="edit-form">
+					<section className="edit-inputs">
+						<div className="input-wrapper">
+							<label htmlFor="firstname"></label>
+							<input type="text" id="firstname" placeholder={actualUser.firstName} />
+						</div>
+						<div className="input-wrapper">
+							<label htmlFor="lastname"></label>
+							<input type="text" id="lastname" placeholder={actualUser.lastName} />
+						</div>
+					</section>
+					<section className="edit-buttons">
+						<button className="edit-user-button" onClick={handleSaveButton}>
+							Save
+						</button>
+						<button className="edit-user-button" onClick={handleCancelButton}>
+							Cancel
+						</button>
+					</section>
 				</form>
-				<button className="edit-button" onClick={handleSaveButton}>
-					Save
-				</button>
-				<button className="edit-button" onClick={handleCancelButton}>
-					Cancel
-				</button>
 			</div>
 		</>
 	)
