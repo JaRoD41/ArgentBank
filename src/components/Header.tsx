@@ -2,7 +2,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/argentBankLogo.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { resetState } from '../features/auth'
-// import { logoutMiddleware } from '../middlewares/loginMiddleware'
 
 interface HeaderProps {
 	actualUser: {

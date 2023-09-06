@@ -2,7 +2,6 @@ import axios from 'axios'
 import { loginURL, profileURL } from '../utils/urls'
 import { Dispatch } from '@reduxjs/toolkit'
 import { setAuthenticating, setUserInfos } from '../features/auth'
-// import { checkBox } from '../features/auth'
 
 export const loginMiddleware = (
 	dispatch: Dispatch,
