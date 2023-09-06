@@ -1,18 +1,9 @@
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import logo from '../assets/argentBankLogo.png'
 import Header from '../components/Header'
 import iconChat from '../assets/icon-chat.png'
 import iconMoney from '../assets/icon-money.png'
 import iconSecurity from '../assets/icon-security.png'
-// import { handleClick } from '../utils/sharedFunctions'
 
 function Home() {
-	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
-	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
-	const navigate = useNavigate()
-
 	return (
 		<>
 			<Header actualUser={{ lastName: '', firstName: '' }} />

@@ -17,6 +17,7 @@ function User() {
 		if (!userLastName) {
 			navigate('/login')
 		}
+		// eslint-disable-next-line
 	}, [])
 
 	return (

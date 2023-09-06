@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { editUserMiddleware } from '../middlewares/editUserMiddleware'
+import { useDispatch } from 'react-redux'
 import { editUser } from '../features/auth'
 
 interface HeaderLoggedInBaseProps {
