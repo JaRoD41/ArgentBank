@@ -17,12 +17,14 @@ export default function HeaderLoggedInEdited({ actualUser }: HeaderLoggedInEdite
 		event.preventDefault()
 		const newFirstName = (document.getElementById('firstname') as HTMLInputElement).value
 		const newLastName = (document.getElementById('lastname') as HTMLInputElement).value
+		const zoneNameErrorMsg = document.querySelector('#nameError') as HTMLElement
 
 		// Je contrôle le format du nom et du prenom avant de les envoyer vers mon middleware
 		if (!userInfosCheck(newFirstName, newLastName)) {
-			console.log('Format du Nom ou Prenom incorrect')
+			zoneNameErrorMsg.innerHTML = 'Format du Nom ou Prenom incorrect'
 			return
 		} else {
+			zoneNameErrorMsg.innerHTML = ''
 			// Je renvoie les nouvelles informations de l'utilisateur vers mon middleware editUser
 			editUserMiddleware(dispatch, newFirstName, newLastName)
 		}
@@ -36,6 +38,7 @@ export default function HeaderLoggedInEdited({ actualUser }: HeaderLoggedInEdite
 		<>
 			<div className="header">
 				<h1>Welcome back</h1>
+				<span id="nameError"></span>
 				<form className="edit-form">
 					<section className="edit-inputs">
 						<div className="input-wrapper">

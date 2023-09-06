@@ -35,6 +35,7 @@ function SignIn() {
 						<div className="input-wrapper">
 							<label htmlFor="username">Username</label>
 							<input type="email" id="username" />
+							<span id="emailError"></span>
 						</div>
 						<div className="input-wrapper">
 							<label htmlFor="password">Password</label>
@@ -50,11 +51,13 @@ function SignIn() {
 								event.preventDefault()
 								const username = (document.getElementById('username') as HTMLInputElement).value
 								const password = (document.getElementById('password') as HTMLInputElement).value
+								const zoneEmailErrorMsg = document.querySelector('#emailError') as HTMLElement
 
 								if (!usernameCheck(username)) {
-									console.log('Username incorrect')
+									zoneEmailErrorMsg.innerHTML = 'Merci de renseigner une adresse email valide'
 									return
 								} else {
+									zoneEmailErrorMsg.innerHTML = ''
 									loginMiddleware(
 										dispatch,
 										username,

@@ -15,12 +15,6 @@ export default function Header({ actualUser }: HeaderProps) {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
-	// const rememberMe = useSelector((state: any) => state.auth.rememberMe)
-
-	// const handleSignout = () => {
-	// 	logoutMiddleware(dispatch)
-	// 	navigate('/login/')
-	// }
 
 	const handleLogIn = (event: any) => {
 		event.preventDefault()
