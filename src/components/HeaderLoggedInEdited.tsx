@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { userInfosCheck } from '../utils/integrityCheck'
 import { editUserMiddleware } from '../middlewares/editUserMiddleware'
 import { editUser } from '../features/auth'
 
@@ -12,9 +11,6 @@ interface HeaderLoggedInEditedProps {
 }
 
 export default function HeaderLoggedInEdited({ actualUser }: HeaderLoggedInEditedProps) {
-	const userFirstName = useSelector((state: any) => state.auth.firstName)
-	const userLastName = useSelector((state: any) => state.auth.lastName)
-	const navigate = useNavigate()
 	const dispatch = useDispatch()
 
 	const handleSaveButton = (event: any) => {
@@ -22,8 +18,14 @@ export default function HeaderLoggedInEdited({ actualUser }: HeaderLoggedInEdite
 		const newFirstName = (document.getElementById('firstname') as HTMLInputElement).value
 		const newLastName = (document.getElementById('lastname') as HTMLInputElement).value
 
-		// Je renvoie les nouvelles informations de l'utilisateur vers mon middleware editUser
-		editUserMiddleware(dispatch, newFirstName, newLastName)
+		// Je contrôle le format du nom et du prenom avant de les envoyer vers mon middleware
+		if (!userInfosCheck(newFirstName, newLastName)) {
+			console.log('Format du Nom ou Prenom incorrect')
+			return
+		} else {
+			// Je renvoie les nouvelles informations de l'utilisateur vers mon middleware editUser
+			editUserMiddleware(dispatch, newFirstName, newLastName)
+		}
 	}
 
 	const handleCancelButton = (event: any) => {

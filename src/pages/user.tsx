@@ -9,8 +9,6 @@ function User() {
 	const userFirstName = useSelector((state: any) => state.auth.firstName)
 	const userLastName = useSelector((state: any) => state.auth.lastName)
 	const editionMode = useSelector((state: any) => state.auth.editionMode)
-	// const user = { lastName: userLastName, firstName: userFirstName }
-	// console.log('Mode edition activé : ', editionMode)
 
 	const navigate = useNavigate()
 

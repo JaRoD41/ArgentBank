@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loginMiddleware } from '../middlewares/loginMiddleware'
 import { useNavigate } from 'react-router-dom'
 import { setUserInfos } from '../features/auth'
-// import { checkBox } from '../features/auth'
+import { usernameCheck } from '../utils/integrityCheck'
 
 function SignIn() {
 	const dispatch = useDispatch()
@@ -13,10 +13,8 @@ function SignIn() {
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
 	const userFirstName = useSelector((state: any) => state.auth.firstName)
 	const userLastName = useSelector((state: any) => state.auth.lastName)
-	// const user = { lastName: userLastName, firstName: userFirstName }
 
 	const handleCheckBox = (event: ChangeEvent<HTMLInputElement>) => {
-		//
 		if ((event.target as HTMLInputElement).checked) {
 			console.log('checkbox checked')
 			dispatch(setUserInfos({ rememberMe: true }))
@@ -25,7 +23,6 @@ function SignIn() {
 			dispatch(setUserInfos({ rememberMe: false }))
 		}
 	}
-	console.log('rememberMe ? :', rememberMe)
 
 	return (
 		<>
@@ -37,7 +34,7 @@ function SignIn() {
 					<form>
 						<div className="input-wrapper">
 							<label htmlFor="username">Username</label>
-							<input type="text" id="username" />
+							<input type="email" id="username" />
 						</div>
 						<div className="input-wrapper">
 							<label htmlFor="password">Password</label>
@@ -54,15 +51,20 @@ function SignIn() {
 								const username = (document.getElementById('username') as HTMLInputElement).value
 								const password = (document.getElementById('password') as HTMLInputElement).value
 
-								loginMiddleware(
-									dispatch,
-									username,
-									password,
-									isLoggedIn,
-									rememberMe,
-									() => navigate('/profile/'),
-									() => navigate('/profile/')
-								)()
+								if (!usernameCheck(username)) {
+									console.log('Username incorrect')
+									return
+								} else {
+									loginMiddleware(
+										dispatch,
+										username,
+										password,
+										isLoggedIn,
+										rememberMe,
+										() => navigate('/profile/'),
+										() => navigate('/profile/')
+									)()
+								}
 							}}
 						>
 							Sign In

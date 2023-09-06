@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { act } from 'react-dom/test-utils'
 
 const initialState = {
 	firstName: '',
@@ -24,13 +23,12 @@ export const auth = createSlice({
 			state.rememberMe = action.payload.rememberMe
 		},
 
-		// checkBox: (state, action) => {
-		// 	state.rememberMe = !state.rememberMe
-		// },
+		
 		setAuthenticating: (state, action) => {
-			// ajouter verif token date, etc.... créer un middleware
 			state.isLoggedIn = action.payload.isLoggedIn
 			state.token = action.payload.token
+			// Je stocke le token dans le local storage
+			localStorage.setItem('token', action.payload.token)
 		},
 		// Je crée un reducer qui va remettre à zéro le State si l'utilisateur se déconnecte
 		resetState: (state) => {
