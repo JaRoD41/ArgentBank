@@ -40,6 +40,12 @@ body {
 	white-space: nowrap !important; /* 3 */
 }
 
+/* Style boutons de connexion du header */
+
+.login-zone {
+	display: flex;
+}
+
 .main-nav {
 	display: flex;
 	justify-content: space-between;
@@ -63,6 +69,10 @@ body {
 
 .main-nav-item:hover {
 	text-decoration: underline;
+}
+
+.main-nav-item span {
+	margin-left: 0.5rem;
 }
 
 .main-nav-logo {
@@ -336,7 +346,8 @@ body {
 
 /* CSS des champs d'erreurs */
 
-#emailError, #connectError {
+#emailError,
+#connectError {
 	font-size: 10px;
 	color: #e54858;
 	display: block;

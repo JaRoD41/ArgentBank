@@ -40,6 +40,7 @@ export const auth = createSlice({
 			state.isLoggedIn = false
 			state.editionMode = false
 			state.error = null
+			localStorage.removeItem('token')
 		},
 
 		// Je crée un reducer pour basculer le composant HeaderLoggedInBase sur le composant HeaderLoggedInEdited si l'utilisateur souhaite modifier son nom et prénom

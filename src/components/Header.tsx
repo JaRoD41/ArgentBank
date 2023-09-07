@@ -38,22 +38,22 @@ export default function Header({ actualUser }: HeaderProps) {
 
 				{/* Si le client est connecté, j'affiche le bouton de déconnexion */}
 				{isLoggedIn ? (
-					<div>
+					<div className="login-zone">
 						<Link className="main-nav-item" to={`/profile/`}>
 							<i className="fa fa-user-circle"></i>
-							{actualUser.firstName}
+							<span>{actualUser.firstName}</span>
 						</Link>
 						<Link className="main-nav-item" to={`/`} onClick={() => dispatch(resetState())}>
 							<i className="fa fa-sign-out"></i>
-							Sign Out
+							<span>Sign Out</span>
 						</Link>
 					</div>
 				) : (
 					// Si le client n'est pas connecté, j'affiche le bouton de connexion
-					<div>
+					<div className="login-zone">
 						<Link className="main-nav-item" to={`/login`} onClick={handleLogIn}>
 							<i className="fa fa-user-circle"></i>
-							Sign In
+							<span>Sign In</span>
 						</Link>
 					</div>
 				)}

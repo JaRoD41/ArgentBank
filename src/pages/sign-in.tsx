@@ -28,7 +28,7 @@ function SignIn() {
 	// J'utilise le hook useEffect pour envoyer le message d'erreur si l'utilisateur ou le mot de passe est invalide
 	useEffect(() => {
 		const zoneConnectErrorMsg = document.querySelector('#connectError') as HTMLElement
-		if (error === 400) {
+		if (error !== null) {
 			zoneConnectErrorMsg.innerHTML = 'Utilisateur ou mot de passe invalide'
 		} else {
 			zoneConnectErrorMsg.innerHTML = ''

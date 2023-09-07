@@ -47,6 +47,7 @@ export const loginMiddleware = (
 			)
 			onSucceed()
 		} catch (error) {
+			// Si l'API retourne une erreur de type AxiosError, je mets à jour le state et affiche l'erreur en console
 			if (axios.isAxiosError(error) && error.response) {
 				console.log('erreur API :', error)
 				dispatch(loginError(error.response.data.status))
