@@ -336,7 +336,7 @@ body {
 
 /* CSS des champs d'erreurs */
 
-#emailError {
+#emailError, #connectError {
 	font-size: 10px;
 	color: #e54858;
 	display: block;
@@ -364,7 +364,6 @@ body {
 .errorPage-container {
 	display: flex;
 	flex-direction: column;
-	/* width: 100vw; */
 	height: 100vh;
 }
 

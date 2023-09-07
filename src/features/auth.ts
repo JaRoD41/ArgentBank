@@ -23,7 +23,6 @@ export const auth = createSlice({
 			state.rememberMe = action.payload.rememberMe
 		},
 
-		
 		setAuthenticating: (state, action) => {
 			state.isLoggedIn = action.payload.isLoggedIn
 			state.token = action.payload.token
@@ -47,8 +46,13 @@ export const auth = createSlice({
 		editUser: (state, action) => {
 			state.editionMode = action.payload.editionMode
 		},
+
+		// Je crée un reducer pour gérer les erreurs de connexion
+		loginError: (state, action) => {
+			state.error = action.payload
+		},
 	},
 })
 
-export const { setUserInfos, setAuthenticating, resetState, editUser } = auth.actions
+export const { setUserInfos, setAuthenticating, resetState, editUser, loginError } = auth.actions
 export default auth.reducer
