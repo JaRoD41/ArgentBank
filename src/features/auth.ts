@@ -40,6 +40,7 @@ export const auth = createSlice({
 			state.isLoggedIn = false
 			state.editionMode = false
 			state.error = null
+			// Je supprime le token du local storage
 			localStorage.removeItem('token')
 		},
 

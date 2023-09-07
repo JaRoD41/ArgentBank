@@ -78,6 +78,7 @@ function SignIn() {
 										password,
 										isLoggedIn,
 										rememberMe,
+										// Je passe ma fonction navigate vers la page profile en paramètre
 										() => navigate('/profile/'),
 										() => navigate('/profile/')
 									)()
