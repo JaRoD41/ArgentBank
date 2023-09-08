@@ -13,9 +13,9 @@ export const loginMiddleware = (
 	onAlreadyLoggedIn: Function
 ) => {
 	return async () => {
-		// Je vérifie si l'utilisateur est déjà connecté et si la case "se souvenir de moi" est cochée
+		// Je vérifie si l'utilisateur est déjà connecté 
 
-		if (isLoggedIn && rememberMe) {
+		if (isLoggedIn) {
 			onAlreadyLoggedIn()
 			return
 		}
@@ -24,7 +24,7 @@ export const loginMiddleware = (
 				email,
 				password,
 			})
-			// J'affiche la réponse de l'API
+			// J'affiche la réponse de l'API dans la console
 			console.log('réponse API :', loginResponse)
 
 			// Si la réponse de l'API est OK et donc contient un token, je mets à jour le state
