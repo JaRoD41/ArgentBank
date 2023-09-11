@@ -13,7 +13,7 @@ export const loginMiddleware = (
 	onAlreadyLoggedIn: Function
 ) => {
 	return async () => {
-		// Je vérifie si l'utilisateur est déjà connecté 
+		// Je vérifie si l'utilisateur est déjà connecté
 
 		if (isLoggedIn) {
 			onAlreadyLoggedIn()
@@ -24,8 +24,6 @@ export const loginMiddleware = (
 				email,
 				password,
 			})
-			// J'affiche la réponse de l'API dans la console
-			console.log('réponse API :', loginResponse)
 
 			// Si la réponse de l'API est OK et donc contient un token, je mets à jour le state
 			if (loginResponse.data.status === 200) {

@@ -17,10 +17,8 @@ function SignIn() {
 
 	const handleCheckBox = (event: ChangeEvent<HTMLInputElement>) => {
 		if ((event.target as HTMLInputElement).checked) {
-			console.log('checkbox checked')
 			dispatch(setUserInfos({ rememberMe: true }))
 		} else {
-			console.log('checkbox not checked')
 			dispatch(setUserInfos({ rememberMe: false }))
 		}
 	}
