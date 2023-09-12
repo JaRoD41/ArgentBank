@@ -1,46 +1,118 @@
-# Getting Started with Create React App
+# Projet n°13 - Développeur Applications Javascript React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://user.oc-static.com/upload/2020/08/18/15977560509272_logo%20%285%29.png">
+</p>
 
-## Available Scripts
+# ArgentBank
 
-In the project directory, you can run:
+> Projet 13 - Utilisez une API pour un compte utilisateur bancaire avec React
 
-### `npm start`
+<p align="center">
+  <img src="https://user.oc-static.com/upload/2020/08/14/1597410191519_image2.png">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> INTRODUCTION
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Remede Agency est une agence spécialisée dans le développement d'applications web et je suis chargé pour le compte de notre nouveau client ArgentBank :
 
-### `npm test`
+- de créer une application web complète et responsive avec React permettant aux clients de se connecter et de gérer leurs comptes et leur profil.
+- fournir un document décrivant les API proposées pour les transactions, en suivant les directives de Swagger, et permettant :
+  - de visualiser toutes leurs transactions pour le mois en cours, groupées par compte ;
+  - de visualiser les détails d'une transaction dans une autre vue ;
+  - d'ajouter, de modifier ou de supprimer des informations sur une transaction.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💻 Technologies used
 
-### `npm run build`
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=css,react,ts,github,html,js,mongodb,nodejs,postman,redux,regex,vercel,vscode" />
+  </a>
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📚 API Documentation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once you have started the backend and local environment, you can visit :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- http://localhost:3001/api-docs
 
-### `npm run eject`
+## 🚀 Backend Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Argent Bank uses the following tech stack:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [Node.js v12](https://nodejs.org/en/)
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Please make sure you have the right versions and download both packages. You can verify this by using the following commands in your terminal:
 
-## Learn More
+```bash
+# Check Node.js version
+node --version
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Check Mongo version
+mongo --version
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Instructions
+
+1. Fork this repo
+2. Clone the repo onto your computer
+3. Open a terminal window in the cloned project
+4. Run the following commands:
+
+```bash
+# Install dependencies
+npm install
+
+# Start local dev server
+npm run dev:server
+
+# Populate database with two users
+npm run populate-db
+```
+
+Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!
+
+## Populated Database Data
+
+Once you run the `populate-db` script, you should have two users in your database:
+
+### Tony Stark
+
+- First Name: `Tony`
+- Last Name: `Stark`
+- Email: `tony@stark.com`
+- Password: `password123`
+
+### Steve Rogers
+
+- First Name: `Steve`,
+- Last Name: `Rogers`,
+- Email: `steve@rogers.com`,
+- Password: `password456`
+
+## 🚀 Frontend installation
+
+- Install NodeJS : [NodeJS](https://nodejs.org/en/)
+- Clone the repo : `git clone https://github.com/JaRoD41/argentbank.git`
+- Install dependencies : `npm install`
+- Launch the server : `npm start`
+- I recommend using [VSCode](https://code.visualstudio.com/) with [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extension
+
+## 📝 Todo
+
+- Using React
+- Using the provided API
+- Using Redux and Redux ToolKit
+- Responsive design
+- Modelize an API
+- Interact with an API using Postman
+- Using Swagger and OpenAPI to create a complete API documentation
+- Using Git and GitHub for versioning
+
+## 📝 Expected deliverables
+
+- A TXT file containing the URL of the GitHub repository
+- A YAML file containing the API documentation using Swagger
