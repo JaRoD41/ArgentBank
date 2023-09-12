@@ -1,9 +1,5 @@
 # Projet n°13 - Développeur Applications Javascript React
 
-<p align="center">
-  <img src="https://user.oc-static.com/upload/2020/08/18/15977560509272_logo%20%285%29.png">
-</p>
-
 # ArgentBank
 
 > Projet 13 - Utilisez une API pour un compte utilisateur bancaire avec React
