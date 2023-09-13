@@ -13,7 +13,7 @@
 Remede Agency est une agence spécialisée dans le développement d'applications web et je suis chargé pour le compte de notre nouveau client ArgentBank :
 
 - de créer une application web complète et responsive avec React permettant aux clients de se connecter et de gérer leurs comptes et leur profil.
-- fournir un document décrivant les API proposées pour les transactions, en suivant les directives de Swagger, et permettant :
+- fournir un document décrivant les endpoints API proposés pour les transactions, en utilisant Swagger / OpenAPI, et permettant :
   - de visualiser toutes leurs transactions pour le mois en cours, groupées par compte ;
   - de visualiser les détails d'une transaction dans une autre vue ;
   - d'ajouter, de modifier ou de supprimer des informations sur une transaction.
