@@ -41,11 +41,11 @@ export default function HeaderLoggedInEdited({ actualUser }: HeaderLoggedInEdite
 				<span id="nameError"></span>
 				<form className="edit-form">
 					<section className="edit-inputs">
-						<div className="input-wrapper">
+						<div className="input-edit-wrapper">
 							<label htmlFor="firstname"></label>
 							<input type="text" id="firstname" placeholder={actualUser.firstName} />
 						</div>
-						<div className="input-wrapper">
+						<div className="input-edit-wrapper">
 							<label htmlFor="lastname"></label>
 							<input type="text" id="lastname" placeholder={actualUser.lastName} />
 						</div>

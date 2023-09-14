@@ -206,14 +206,31 @@ body {
 	flex-direction: column;
 	text-align: left;
 	margin-bottom: 1rem;
-	width: 10rem;
 }
+
 
 .input-wrapper label {
 	font-weight: bold;
 }
 
 .input-wrapper input {
+	padding: 5px;
+	font-size: 1.2rem;
+}
+
+.input-edit-wrapper {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	margin-bottom: 1rem;
+	width: 10rem;
+}
+
+.input-edit-wrapper label {
+	font-weight: bold;
+}
+
+.input-edit-wrapper input {
 	padding: 5px;
 	font-size: 1.2rem;
 }
