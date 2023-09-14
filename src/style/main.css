@@ -206,6 +206,7 @@ body {
 	flex-direction: column;
 	text-align: left;
 	margin-bottom: 1rem;
+	width: 10rem;
 }
 
 .input-wrapper label {
@@ -276,7 +277,7 @@ body {
 
 .header {
 	color: #fff;
-	width: 50rem;
+	width: 100%;
 	margin: auto;
 	margin-bottom: 2rem;
 	display: flex;
@@ -317,20 +318,20 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 30rem;
+	width: 22rem;
 }
 
 .edit-inputs {
 	display: flex;
 	flex-direction: row;
-	width: 30rem;
+	width: 22rem;
 	justify-content: space-around;
 }
 
 .edit-buttons {
 	display: flex;
 	flex-direction: row;
-	width: 30rem;
+	width: 14rem;
 	justify-content: center;
 	gap: 1rem;
 }
