@@ -23,6 +23,7 @@ function User() {
 	return (
 		userLastName && (
 			<>
+				{/* Je passe la props actualUser au composant Header afin d'afficher les informations de l'utilisateur */}
 				<Header actualUser={{ lastName: userLastName, firstName: userFirstName }} />
 				<main className="main bg-dark">
 					{/* Si le bouton Edit est cliqué, j'affiche le composant HeaderLoggedInEdited, sinon le HeaderLoggedInBase */}

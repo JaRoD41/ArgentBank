@@ -3,6 +3,7 @@ import logo from '../assets/argentBankLogo.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { resetState } from '../features/auth'
 
+// Je crée une interface pour définir les props du composant en respectant typescript
 interface HeaderProps {
 	actualUser: {
 		lastName: string

@@ -15,6 +15,7 @@ export const editUserMiddleware = async (dispatch: Dispatch, firstName: string, 
 	)
 
 	try {
+		// Je mets à jour le nom et le prenom via un un axios PUT
 		const editUserResponse = await axios.put(
 			profileURL,
 			{
