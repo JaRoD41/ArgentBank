@@ -16,6 +16,7 @@ export const auth = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
+		// Je crée un reducer qui va stocker les informations de l'utilisateur
 		setUserInfos: (state, action) => {
 			state.firstName = action.payload.firstName
 			state.lastName = action.payload.lastName
@@ -23,6 +24,7 @@ export const auth = createSlice({
 			state.rememberMe = action.payload.rememberMe
 		},
 
+		// Je crée un reducer qui va stocker le token de l'utilisateur connecté
 		setAuthenticating: (state, action) => {
 			state.isLoggedIn = action.payload.isLoggedIn
 			state.token = action.payload.token
