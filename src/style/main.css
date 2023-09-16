@@ -208,7 +208,6 @@ body {
 	margin-bottom: 1rem;
 }
 
-
 .input-wrapper label {
 	font-weight: bold;
 }
@@ -418,4 +417,16 @@ body {
 	font-size: 5rem;
 	font-weight: 500;
 	display: flex;
+}
+
+/* Responsive de la page d'erreur */
+
+@media (max-width: 720px) {
+	.errorPage__text {
+		font-size: 3rem;
+	}
+
+	.errorPage__title {
+		font-size: 3rem;
+	}
 }
