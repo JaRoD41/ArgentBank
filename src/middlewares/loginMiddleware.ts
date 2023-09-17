@@ -45,9 +45,7 @@ export const loginMiddleware = (
 			)
 			// Je sauvegarde l'email dans le local storage si la case RememberMe est cochée
 			if (rememberMe) {
-				localStorage.setItem('savedEmail', email)
-			} else {
-				localStorage.removeItem('savedEmail')
+				localStorage.setItem('token', loginResponse.data.body.token)
 			}
 			onSucceed()
 		} catch (error) {
