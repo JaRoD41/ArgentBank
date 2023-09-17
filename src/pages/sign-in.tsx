@@ -11,6 +11,7 @@ function SignIn() {
 	const navigate = useNavigate()
 	const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
 	const rememberMe = useSelector((state: any) => state.auth.rememberMe)
+	// const savedEmail = localStorage.getItem('savedEmail')
 	const userFirstName = useSelector((state: any) => state.auth.firstName)
 	const userLastName = useSelector((state: any) => state.auth.lastName)
 	const error = useSelector((state: any) => state.auth.error)
@@ -59,6 +60,7 @@ function SignIn() {
 							className="sign-in-button"
 							onClick={(event) => {
 								event.preventDefault()
+
 								const username = (document.getElementById('username') as HTMLInputElement).value
 								const password = (document.getElementById('password') as HTMLInputElement).value
 								const zoneEmailErrorMsg = document.querySelector('#emailError') as HTMLElement

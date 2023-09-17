@@ -43,6 +43,12 @@ export const loginMiddleware = (
 					email: profileResponse.data.body.email,
 				})
 			)
+			// Je sauvegarde l'email dans le local storage si la case RememberMe est cochée
+			if (rememberMe) {
+				localStorage.setItem('savedEmail', email)
+			} else {
+				localStorage.removeItem('savedEmail')
+			}
 			onSucceed()
 		} catch (error) {
 			// Si l'API retourne une erreur de type AxiosError, je mets à jour le state et affiche l'erreur en console

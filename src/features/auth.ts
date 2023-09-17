@@ -28,8 +28,6 @@ export const auth = createSlice({
 		setAuthenticating: (state, action) => {
 			state.isLoggedIn = action.payload.isLoggedIn
 			state.token = action.payload.token
-			// Je stocke le token dans le local storage
-			localStorage.setItem('token', action.payload.token)
 		},
 		// Je crée un reducer qui va remettre à zéro le State si l'utilisateur se déconnecte
 		resetState: (state) => {
@@ -42,8 +40,8 @@ export const auth = createSlice({
 			state.isLoggedIn = false
 			state.editionMode = false
 			state.error = null
-			// Je supprime le token du local storage
-			localStorage.removeItem('token')
+			// Je supprime l'email du local storage
+			localStorage.removeItem('savedEmail')
 		},
 
 		// Je crée un reducer pour basculer le composant HeaderLoggedInBase sur le composant HeaderLoggedInEdited si l'utilisateur souhaite modifier son nom et prénom
